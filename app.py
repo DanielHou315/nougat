@@ -34,7 +34,7 @@ if NOUGAT_CHECKPOINT is None:
     sys.exit(1)
 
 app = FastAPI(title="Nougat API")
-origins = ["http://localhost", "http://127.0.0.1"]
+origins = ["http://localhost", "http://127.0.0.1", "https://192.168.196.100"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -166,7 +166,7 @@ async def predict(
 def main():
     import uvicorn
 
-    uvicorn.run("app:app", port=8503)
+    uvicorn.run("app:app", host="0.0.0.0", port=8503)
 
 
 if __name__ == "__main__":
