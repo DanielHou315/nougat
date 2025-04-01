@@ -34,7 +34,7 @@ if NOUGAT_CHECKPOINT is None:
     sys.exit(1)
 
 app = FastAPI(title="Nougat API")
-origins = ["http://localhost", "http://127.0.0.1", "https://192.168.196.100"]
+origins = ["http://localhost", "http://127.0.0.1", "https://192.168.196.*"]
 
 app.add_middleware(
     CORSMiddleware,
